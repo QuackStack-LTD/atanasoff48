@@ -549,6 +549,10 @@ img {
     background-clip: text;
 }
 
+.title-main::after {
+    content: '__';
+}
+
 .title-48 {
     font-size: clamp(4rem, 12vw, 8rem);
     background: linear-gradient(135deg, var(--cyan) 0%, var(--pink) 100%);
@@ -1905,6 +1909,10 @@ img {
     .hero-title {
         flex-direction: row;
         gap: 4px;
+    }
+
+    .title-main::after {
+        display: none;
     }
 
     .countdown-block {
