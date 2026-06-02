@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atanasoff48 — Hackathon | СПГЕ „Джон Атанасов"</title>
+    <meta name="description" content="Atanasoff48 — първият хакатон на СПГЕ „Джон Атанасов". 2-4 октомври 2026 г. Създай проекта си за 48 часа!">
+    <meta name="keywords" content="hackathon, хакатон, Atanasoff48, СПГЕ, Джон Атанасов, програмиране, код">
+    <meta property="og:title" content="Atanasoff48 — Hackathon">
+    <meta property="og:description" content="Първият хакатон на СПГЕ „Джон Атанасов". 2-4 октомври 2026 г.">
+    <meta property="og:image" content="CatIcon.png">
+    <link rel="icon" type="image/png" href="CatIcon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <!-- Animated Background -->
+    <canvas id="bg-canvas"></canvas>
+    <div class="gradient-orbs">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
+
+
+    <!-- Navigation -->
+    <nav id="navbar" class="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="nav-logo" id="nav-logo">
+                <img src="CatIcon.png" alt="Atanasoff48" class="nav-logo-img">
+                <span class="nav-logo-text">Atanasoff<span class="accent-48">48</span></span>
+            </a>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#about" class="nav-link" data-text="За нас">За нас</a></li>
+                <li><a href="#awards" class="nav-link" data-text="Награди">Награди</a></li>
+                <li><a href="#schedule" class="nav-link" data-text="Програма">Програма</a></li>
+                <li><a href="#rules" class="nav-link" data-text="Участие">Участие</a></li>
+                <!-- <li><span class="nav-cta nav-cta-disabled"><span>Очаквайте скоро</span></span></li> -->
+            </ul>
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="hero-grid-bg"></div>
+        <div class="hero-content">
+            <div class="hero-logo-container reveal-up" data-delay="0">
+                <div class="logo-ring-outer"></div>
+                <div class="logo-ring-inner"></div>
+                <img src="CatIcon.png" alt="Atanasoff48 Mascot" class="hero-logo" id="hero-logo">
+                <div class="logo-particles" id="logo-particles"></div>
+            </div>
+
+            <h1 class="hero-title reveal-up" data-delay="200">
+                <span class="title-main" data-text="ATANASOFF">ATANASOFF</span>
+                <span class="title-48 glitch-text" data-text="48">48</span>
+            </h1>
+
+            <div class="hero-tagline reveal-up" data-delay="400">
+                <span class="tagline-line"></span>
+                <span class="tagline-text">HACKATHON</span>
+                <span class="tagline-line"></span>
+            </div>
+
+            <p class="hero-subtitle reveal-up" data-delay="500">
+                Първи хакатон на СПГЕ „Джон Атанасов"
+            </p>
+
+            <div class="hero-info-strip reveal-up" data-delay="600">
+                <div class="info-chip">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                    <span>2–4 окт. 2026</span>
+                </div>
+                <div class="info-chip">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    <span>STEM Център</span>
+                </div>
+                <div class="info-chip highlight">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+                    <span>Безплатен вход</span>
+                </div>
+            </div>
+
+            <!-- Countdown -->
+            <div class="countdown reveal-up" data-delay="700" id="countdown">
+                <div class="countdown-block">
+                    <div class="countdown-digits" id="cd-days">
+                        <span class="digit">1</span><span class="digit">2</span><span class="digit">2</span>
+                    </div>
+                    <span class="countdown-label">Дни</span>
+                </div>
+                <div class="countdown-sep">:</div>
+                <div class="countdown-block">
+                    <div class="countdown-digits" id="cd-hours">
+                        <span class="digit">0</span><span class="digit">0</span>
+                    </div>
+                    <span class="countdown-label">Часа</span>
+                </div>
+                <div class="countdown-sep">:</div>
+                <div class="countdown-block">
+                    <div class="countdown-digits" id="cd-minutes">
+                        <span class="digit">0</span><span class="digit">0</span>
+                    </div>
+                    <span class="countdown-label">Минути</span>
+                </div>
+                <div class="countdown-sep">:</div>
+                <div class="countdown-block">
+                    <div class="countdown-digits" id="cd-seconds">
+                        <span class="digit">0</span><span class="digit">0</span>
+                    </div>
+                    <span class="countdown-label">Секунди</span>
+                </div>
+            </div>
+
+            <div class="hero-buttons reveal-up" data-delay="800">
+                <span class="btn-hero btn-disabled" id="hero-cta">
+                    <span class="btn-text">Регистрацията предстои</span>
+                    <svg class="btn-icon-svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+                </span>
+                <a href="#about" class="btn-ghost magnetic-btn" id="hero-learn">
+                    <span>Научи повече</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- <div class="scroll-cue">
+            <div class="scroll-line"></div>
+            <span>SCROLL</span>
+        </div> -->
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section section-about">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">01</span>
+                <h2 class="section-title reveal-up">
+                    Какво е <span class="text-gradient">Atanasoff48</span>?
+                </h2>
+                <p class="section-subtitle reveal-up" data-delay="100">
+                    Първият хакатон на СПГЕ „Джон Атанасов", организиран от Ученическия съвет.
+                    Три дни, в които ще създадеш своя проект от нулата!
+                </p>
+            </div>
+
+            <div class="about-cards">
+                <div class="about-card tilt-card reveal-up" data-delay="0" id="card-date">
+                    <div class="card-glow"></div>
+                    <div class="card-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                    </div>
+                    <h3>Дата</h3>
+                    <p class="card-value">2–4 октомври 2026</p>
+                    <span class="card-detail">от 10:00 ч. до 18:00 ч.</span>
+                </div>
+
+                <div class="about-card tilt-card reveal-up" data-delay="100" id="card-location">
+                    <div class="card-glow"></div>
+                    <div class="card-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    </div>
+                    <h3>Място</h3>
+                    <p class="card-value">STEM Център</p>
+                    <span class="card-detail">СПГЕ „Джон Атанасов"</span>
+                </div>
+
+                <div class="about-card tilt-card reveal-up" data-delay="200" id="card-teams">
+                    <div class="card-glow"></div>
+                    <div class="card-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+                    </div>
+                    <h3>Отбори</h3>
+                    <p class="card-value">Макс. 16 отбора</p>
+                    <span class="card-detail">До 4 души в отбор</span>
+                </div>
+
+                <div class="about-card tilt-card about-card--accent reveal-up" data-delay="300" id="card-price">
+                    <div class="card-glow"></div>
+                    <div class="card-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="20 12 20 22 4 22 4 12"/><rect x="2" y="7" width="20" height="5"/><line x1="12" y1="22" x2="12" y2="7"/><path d="M12 7H7.5a2.5 2.5 0 010-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 000-5C13 2 12 7 12 7z"/></svg>
+                    </div>
+                    <h3>Вход</h3>
+                    <p class="card-value">БЕЗПЛАТЕН</p>
+                    <span class="card-detail">Без такси за участие</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Awards Section -->
+    <section id="awards" class="section section-awards">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">02</span>
+                <h2 class="section-title reveal-up">
+                    Какво можеш да <span class="text-gradient">спечелиш</span>?
+                </h2>
+                <p class="section-subtitle reveal-up" data-delay="100">
+                    Множество категории за награждаване — всеки отбор има шанс!
+                </p>
+            </div>
+
+            <div class="awards-grid">
+                <div class="award-card tilt-card reveal-up" data-delay="0" id="award-jury">
+                    <div class="award-rank">🏆</div>
+                    <h3>Оценка на журито</h3>
+                    <p>1-во, 2-ро и 3-то място</p>
+                    <div class="award-medals">
+                        <span class="medal gold">🥇 1-во</span>
+                        <span class="medal silver">🥈 2-ро</span>
+                        <span class="medal bronze">🥉 3-то</span>
+                    </div>
+                </div>
+                <div class="award-card tilt-card reveal-up" data-delay="100" id="award-originality">
+                    <div class="award-rank">💡</div>
+                    <h3>Оригиналност</h3>
+                    <p>За най-креативния и иновативен проект</p>
+                </div>
+                <div class="award-card tilt-card reveal-up" data-delay="200" id="award-sponsors">
+                    <div class="award-rank">⭐</div>
+                    <h3>Награда от спонсори</h3>
+                    <p>Специални награди от нашите партньори</p>
+                </div>
+                <div class="award-card tilt-card reveal-up" data-delay="300" id="award-mentors">
+                    <div class="award-rank">🎯</div>
+                    <h3>Избор на менторите</h3>
+                    <p>Наградата, избрана от менторите</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Schedule Section -->
+    <section id="schedule" class="section section-schedule">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">03</span>
+                <h2 class="section-title reveal-up">
+                    Програма на <span class="text-gradient">Atanasoff48</span>
+                </h2>
+            </div>
+
+            <div class="schedule-tabs reveal-up" data-delay="100">
+                <button class="sched-tab active" data-day="day1" id="tab-day1">
+                    <span class="sched-tab-label">Ден 1</span>
+                    <span class="sched-tab-date">Петък · 02.10</span>
+                </button>
+                <button class="sched-tab" data-day="day2" id="tab-day2">
+                    <span class="sched-tab-label">Ден 2</span>
+                    <span class="sched-tab-date">Събота · 03.10</span>
+                </button>
+                <button class="sched-tab" data-day="day3" id="tab-day3">
+                    <span class="sched-tab-label">Ден 3</span>
+                    <span class="sched-tab-date">Неделя · 04.10</span>
+                </button>
+            </div>
+
+            <div class="schedule-panels">
+                <!-- Day 1 -->
+                <div class="sched-panel active" id="day1">
+                    <div class="timeline">
+                        <div class="tl-item" data-type="ceremony">
+                            <div class="tl-time">10:00 – 10:30</div>
+                            <div class="tl-card"><h4>Откриване на дейности</h4><p>Официално откриване и правила</p></div>
+                        </div>
+                        <div class="tl-item" data-type="talk">
+                            <div class="tl-time">10:30 – 11:15</div>
+                            <div class="tl-card"><h4>Лектор 1: Работа в екип</h4><p>Как да работим ефективно заедно</p></div>
+                        </div>
+                        <div class="tl-item" data-type="break">
+                            <div class="tl-time">11:15 – 11:30</div>
+                            <div class="tl-card"><h4>Почивка</h4><p>Кратка пауза</p></div>
+                        </div>
+                        <div class="tl-item" data-type="talk">
+                            <div class="tl-time">11:30 – 12:30</div>
+                            <div class="tl-card"><h4>Лектор 2: Техническа подготовка</h4><p>Технически съвети и инструменти</p></div>
+                        </div>
+                        <div class="tl-item" data-type="highlight">
+                            <div class="tl-time">12:30 – 13:00</div>
+                            <div class="tl-card"><h4>🎯 Обявяване на темата</h4><p>Темата на хакатона бива разкрита!</p></div>
+                        </div>
+                        <div class="tl-item" data-type="work">
+                            <div class="tl-time">13:00 – 17:30</div>
+                            <div class="tl-card"><h4>Стартиране на работа</h4><p>Започваме да кодим!</p></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Day 2 -->
+                <div class="sched-panel" id="day2">
+                    <div class="timeline">
+                        <div class="tl-item" data-type="ceremony">
+                            <div class="tl-time">08:00 – 08:30</div>
+                            <div class="tl-card"><h4>Откриване на дейности</h4><p>Добро утро! Начало на втория ден</p></div>
+                        </div>
+                        <div class="tl-item" data-type="work">
+                            <div class="tl-time">08:30 – 09:30</div>
+                            <div class="tl-card"><h4>Работа по проекти</h4><p>Продължаваме с пълна сила</p></div>
+                        </div>
+                        <div class="tl-item" data-type="break">
+                            <div class="tl-time">09:30 – 10:10</div>
+                            <div class="tl-card"><h4>Закуска</h4><p>Зареди батериите</p></div>
+                        </div>
+                        <div class="tl-item" data-type="work">
+                            <div class="tl-time">13:30 – 14:30</div>
+                            <div class="tl-card"><h4>Работа</h4><p>Пълно потапяне в кода</p></div>
+                        </div>
+                        <div class="tl-item" data-type="break">
+                            <div class="tl-time">14:30 – 15:00</div>
+                            <div class="tl-card"><h4>Обяд</h4><p>Време за почивка и храна</p></div>
+                        </div>
+                        <div class="tl-item" data-type="work">
+                            <div class="tl-time">15:00 – 18:00</div>
+                            <div class="tl-card"><h4>Работа</h4><p>Следобедна сесия</p></div>
+                        </div>
+                        <div class="tl-item" data-type="break">
+                            <div class="tl-time">19:00 – 19:30</div>
+                            <div class="tl-card"><h4>Вечеря</h4><p>Заслужена почивка</p></div>
+                        </div>
+                        <div class="tl-item" data-type="work">
+                            <div class="tl-time">19:30 – 21:00</div>
+                            <div class="tl-card"><h4>Работа</h4><p>Вечерна сесия</p></div>
+                        </div>
+                        <div class="tl-item" data-type="warning">
+                            <div class="tl-time">21:00</div>
+                            <div class="tl-card"><h4>Закриване на деня</h4><p>Край на работния ден</p></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Day 3 -->
+                <div class="sched-panel" id="day3">
+                    <div class="timeline">
+                        <div class="tl-item" data-type="ceremony">
+                            <div class="tl-time">08:00 – 08:30</div>
+                            <div class="tl-card"><h4>Откриване на дейности</h4><p>Последният ден — дай всичко от себе си!</p></div>
+                        </div>
+                        <div class="tl-item" data-type="work">
+                            <div class="tl-time">08:30 – 10:00</div>
+                            <div class="tl-card"><h4>Работа по проекти</h4><p>Финален спринт</p></div>
+                        </div>
+                        <div class="tl-item" data-type="highlight">
+                            <div class="tl-time">10:00</div>
+                            <div class="tl-card"><h4>🎮 Първо демо</h4><p>Покажете какво имате до момента</p></div>
+                        </div>
+                        <div class="tl-item" data-type="break">
+                            <div class="tl-time">10:00 – 10:30</div>
+                            <div class="tl-card"><h4>Закуска</h4><p>Последно зареждане</p></div>
+                        </div>
+                        <div class="tl-item" data-type="work">
+                            <div class="tl-time">10:30 – 12:30</div>
+                            <div class="tl-card"><h4>Финални щрихи</h4><p>Последни корекции и полиране</p></div>
+                        </div>
+                        <div class="tl-item" data-type="break">
+                            <div class="tl-time">12:30 – 13:00</div>
+                            <div class="tl-card"><h4>Обяд</h4><p>Преди защитата</p></div>
+                        </div>
+                        <div class="tl-item" data-type="ceremony">
+                            <div class="tl-time">13:00</div>
+                            <div class="tl-card"><h4>Край на работата</h4><p>Спираме да кодим — време за представяне!</p></div>
+                        </div>
+                        <div class="tl-item" data-type="talk">
+                            <div class="tl-time">14:00 – 17:00</div>
+                            <div class="tl-card"><h4>Защита на проектите</h4><p>Всеки отбор представя проекта си</p></div>
+                        </div>
+                        <div class="tl-item" data-type="talk">
+                            <div class="tl-time">17:00 – 17:30</div>
+                            <div class="tl-card"><h4>Оценяване</h4><p>Журито избира победителите</p></div>
+                        </div>
+                        <div class="tl-item" data-type="highlight">
+                            <div class="tl-time">17:30 – 18:30</div>
+                            <div class="tl-card"><h4>🏆 Награждаване и закриване</h4><p>Церемония по награждаване</p></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rules / How to Participate -->
+    <section id="rules" class="section section-rules">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">04</span>
+                <h2 class="section-title reveal-up">
+                    Как да <span class="text-gradient">участваш</span>?
+                </h2>
+            </div>
+
+            <div class="steps-grid">
+                <div class="step-card reveal-up" data-delay="0" id="step-1">
+                    <div class="step-num"><span>01</span></div>
+                    <h3>Събери отбор</h3>
+                    <p>Формирай отбор от до 4 души. Можеш и сам, но екипната работа е по-забавна!</p>
+                </div>
+                <div class="step-card reveal-up" data-delay="150" id="step-2">
+                    <div class="step-num"><span>02</span></div>
+                    <h3>Регистрирай се</h3>
+                    <p>Попълни формата за регистрация. Местата са ограничени до 16 отбора!</p>
+                </div>
+                <div class="step-card reveal-up" data-delay="300" id="step-3">
+                    <div class="step-num"><span>03</span></div>
+                    <h3>Ела на 2 октомври</h3>
+                    <p>STEM центъра, 02.10.2026 г. в 10:00 часа. Носи лаптоп и ентусиазъм!</p>
+                </div>
+                <div class="step-card reveal-up" data-delay="450" id="step-4">
+                    <div class="step-num"><span>04</span></div>
+                    <h3>Създай проект</h3>
+                    <p>Имаш три дни. Жури от 5 души ще оцени и ще избере победителите.</p>
+                </div>
+            </div>
+
+            <!-- <div class="extra-info reveal-up" data-delay="200">
+                <div class="extra-info-card">
+                    <h3>📋 Допълнителна информация</h3>
+                    <ul>
+                        <li><strong>Организатор:</strong> Ученически съвет на СПГЕ „Джон Атанасов"</li>
+                        <li><strong>Отговорници:</strong> 2-ма пълнолетни (външни) + 4-ма пълнолетни ученици на СПГЕ</li>
+                        <li><strong>Ментори:</strong> 8 до 16 ментори ще помагат по време на събитието</li>
+                        <li><strong>Жури:</strong> 5 души</li>
+                        <li><strong>Нощуване:</strong> Възможност за преспиване в училището</li>
+                        <li><strong>Вход:</strong> Напълно безплатен</li>
+                    </ul>
+                </div>
+            </div> -->
+        </div>
+    </section>
+
+    <!-- CTA / Register -->
+    <section id="register" class="section section-register">
+        <div class="container">
+            <div class="cta-card reveal-up">
+                <div class="cta-bg-effect"></div>
+                <div class="cta-content">
+                    <img src="CatIcon.png" alt="Atanasoff48" class="cta-mascot">
+                    <h2>Готов ли си за <span class="text-gradient">Atanasoff48</span>?</h2>
+                    <p>Регистрацията все още не е отворена. Следи тази страница за актуална информация!</p>
+                    <span class="btn-hero btn-disabled" id="register-cta">
+                        <span class="btn-text">Регистрацията предстои</span>
+                        <svg class="btn-icon-svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+                    </span>
+                    <span class="cta-note">Местата ще са ограничени до 16 отбора · Безплатен вход</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <img src="CatIcon.png" alt="Atanasoff48" class="footer-logo">
+                    <div>
+                        <span class="footer-name">Atanasoff<span class="accent-48">48</span></span>
+                        <p>Hackathon · СПГЕ „Джон Атанасов"</p>
+                    </div>
+                </div>
+                <div class="footer-nav">
+                    <a href="#about">За нас</a>
+                    <a href="#awards">Награди</a>
+                    <a href="#schedule">Програма</a>
+                    <a href="#rules">Участие</a>
+                    <a href="#register">Регистрация</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Atanasoff48 — Hackathon. Организиран от Ученическия съвет на СПГЕ „Джон Атанасов".</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="index.js"></script>
+</body>
+</html>
