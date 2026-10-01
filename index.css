@@ -734,7 +734,79 @@ img {
     border-color: rgba(194, 24, 91, 0.35);
 }
 
+/* ---- Hero Partners & Sponsors ---- */
+.hero-supporters {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+    margin-top: 10px;
+}
+
+.supporters-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.supporters-label {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--white-50);
+}
+
+.supporters-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* Brand logos are made for light backgrounds, so each sits on a white chip */
+.supporter-chip {
+    width: 140px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 14px;
+    background: var(--white);
+    border-radius: var(--radius-md);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+    transition: var(--transition);
+}
+
+.supporter-chip:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3), 0 0 24px var(--cyan-glow);
+}
+
+/* --h is set per logo so wide and compact marks carry similar visual weight;
+   object-fit keeps the widest ones inside the chip */
+.supporter-chip img {
+    width: 100%;
+    height: var(--h);
+    object-fit: contain;
+}
+
 /* ---- Countdown ---- */
+.countdown-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 14px;
+}
+
+.countdown-title {
+    font-family: var(--font-display);
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--white-70);
+}
+
 .countdown {
     display: flex;
     align-items: center;
@@ -1773,6 +1845,29 @@ img {
     color: var(--white-50);
 }
 
+/* ---- Attend (follows Schedule, so it carries the fade to navy-deep) ---- */
+.section-attend {
+    padding: 100px 0 120px;
+    background: linear-gradient(180deg, var(--navy) 0%, var(--navy-deep) 100%);
+}
+
+.section-attend .cta-card p {
+    max-width: 560px;
+}
+
+.cta-card p strong {
+    color: var(--white-90);
+    font-weight: 600;
+}
+
+.cta-card .cta-thanks {
+    margin-bottom: 0;
+    padding-top: 24px;
+    border-top: 1px solid var(--white-10);
+    color: var(--white-70);
+    font-weight: 500;
+}
+
 /* ============================================
    FOOTER
    ============================================ */
@@ -1915,6 +2010,20 @@ img {
         display: none;
     }
 
+    .supporters-list {
+        gap: 8px;
+    }
+
+    .supporter-chip {
+        width: 104px;
+        height: 48px;
+        padding: 6px 8px;
+    }
+
+    .supporter-chip img {
+        height: calc(var(--h) * 0.75);
+    }
+
     .countdown-block {
         min-width: 62px;
         padding: 10px 10px 8px;
@@ -1991,6 +2100,11 @@ img {
     .hero-info-strip {
         flex-direction: column;
         align-items: center;
+    }
+
+    /* 2×2 instead of an orphaned 3+1 when four chips don't fit in a row */
+    .supporters-list--sponsors {
+        max-width: calc(2 * 104px + 8px);
     }
 
     .countdown {

@@ -36,7 +36,7 @@
                 <li><a href="#about" class="nav-link" data-text="За нас">За нас</a></li>
                 <li><a href="#awards" class="nav-link" data-text="Награди">Награди</a></li>
                 <li><a href="#schedule" class="nav-link" data-text="Програма">Програма</a></li>
-                <li><a href="#rules" class="nav-link" data-text="Участие">Участие</a></li>
+                <li><a href="#attend" class="nav-link" data-text="Участие">Участие</a></li>
                 <!-- <li><span class="nav-cta nav-cta-disabled"><span>Очаквайте скоро</span></span></li> -->
             </ul>
             <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
@@ -86,38 +86,63 @@
                 </div>
             </div>
 
-            <!-- Countdown -->
-            <div class="countdown reveal-up" data-delay="700" id="countdown">
-                <div class="countdown-block">
-                    <div class="countdown-digits" id="cd-days">
-                        <span class="digit">1</span><span class="digit">2</span><span class="digit">2</span>
-                    </div>
-                    <span class="countdown-label">Дни</span>
+            <!-- Partners & Sponsors -->
+            <div class="hero-supporters reveal-up" data-delay="650">
+                <div class="supporters-group">
+                    <span class="supporters-label">Партньори</span>
+                    <ul class="supporters-list">
+                        <li class="supporter-chip"><img src="partners/az-moga.png" alt="Аз мога – тук и сега" width="1063" height="1175" style="--h: 44px"></li>
+                        <li class="supporter-chip"><img src="partners/qoax.svg" alt="Qoax" width="294" height="97" style="--h: 30px"></li>
+                        <li class="supporter-chip"><img src="partners/devhubone.png" alt="DevHubOne" width="1236" height="373" style="--h: 31px"></li>
+                    </ul>
                 </div>
-                <div class="countdown-sep">:</div>
-                <div class="countdown-block">
-                    <div class="countdown-digits" id="cd-hours">
-                        <span class="digit">0</span><span class="digit">0</span>
-                    </div>
-                    <span class="countdown-label">Часа</span>
-                </div>
-                <div class="countdown-sep">:</div>
-                <div class="countdown-block">
-                    <div class="countdown-digits" id="cd-minutes">
-                        <span class="digit">0</span><span class="digit">0</span>
-                    </div>
-                    <span class="countdown-label">Минути</span>
-                </div>
-                <div class="countdown-sep">:</div>
-                <div class="countdown-block">
-                    <div class="countdown-digits" id="cd-seconds">
-                        <span class="digit">0</span><span class="digit">0</span>
-                    </div>
-                    <span class="countdown-label">Секунди</span>
+                <div class="supporters-group">
+                    <span class="supporters-label">Спонсори</span>
+                    <ul class="supporters-list supporters-list--sponsors">
+                        <li class="supporter-chip"><img src="partners/nemetschek.svg" alt="Nemetschek Bulgaria" width="257" height="57" style="--h: 27px"></li>
+                        <li class="supporter-chip"><img src="partners/postbank.png" alt="Postbank" width="1000" height="261" style="--h: 30px"></li>
+                        <li class="supporter-chip"><img src="partners/centillion.svg" alt="Centillion Electronics" width="246" height="100" style="--h: 40px"></li>
+                        <li class="supporter-chip"><img src="partners/m2m-services.png" alt="M2M Services" width="664" height="300" style="--h: 38px"></li>
+                    </ul>
                 </div>
             </div>
 
-            <div class="hero-buttons reveal-up" data-delay="800">
+            <!-- Countdown (hidden) -->
+            <!-- <div class="countdown-wrap reveal-up" data-delay="700">
+                <p class="countdown-title">Програмирането почва след:</p>
+                <div class="countdown" id="countdown">
+                    <div class="countdown-block">
+                        <div class="countdown-digits" id="cd-days">
+                            <span class="digit">1</span><span class="digit">2</span><span class="digit">2</span>
+                        </div>
+                        <span class="countdown-label">Дни</span>
+                    </div>
+                    <div class="countdown-sep">:</div>
+                    <div class="countdown-block">
+                        <div class="countdown-digits" id="cd-hours">
+                            <span class="digit">0</span><span class="digit">0</span>
+                        </div>
+                        <span class="countdown-label">Часа</span>
+                    </div>
+                    <div class="countdown-sep">:</div>
+                    <div class="countdown-block">
+                        <div class="countdown-digits" id="cd-minutes">
+                            <span class="digit">0</span><span class="digit">0</span>
+                        </div>
+                        <span class="countdown-label">Минути</span>
+                    </div>
+                    <div class="countdown-sep">:</div>
+                    <div class="countdown-block">
+                        <div class="countdown-digits" id="cd-seconds">
+                            <span class="digit">0</span><span class="digit">0</span>
+                        </div>
+                        <span class="countdown-label">Секунди</span>
+                    </div>
+                </div>
+            </div> -->
+
+            <!-- Buttons (hidden) -->
+            <!-- <div class="hero-buttons reveal-up" data-delay="800">
                 <span class="btn-hero btn-disabled" id="hero-cta">
                     <span class="btn-text">Регистрацията предстои</span>
                     <svg class="btn-icon-svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
@@ -125,7 +150,7 @@
                 <a href="#about" class="btn-ghost magnetic-btn" id="hero-learn">
                     <span>Научи повече</span>
                 </a>
-            </div>
+            </div> -->
         </div>
 
         <!-- <div class="scroll-cue">
@@ -380,8 +405,8 @@
         </div>
     </section>
 
-    <!-- Rules / How to Participate -->
-    <section id="rules" class="section section-rules">
+    <!-- Rules / How to Participate (hidden) -->
+    <section id="rules" class="section section-rules" hidden>
         <div class="container">
             <div class="section-header">
                 <span class="section-number">04</span>
@@ -429,8 +454,8 @@
         </div>
     </section>
 
-    <!-- CTA / Register -->
-    <section id="register" class="section section-register">
+    <!-- CTA / Register (hidden) -->
+    <section id="register" class="section section-register" hidden>
         <div class="container">
             <div class="cta-card reveal-up">
                 <div class="cta-bg-effect"></div>
@@ -443,6 +468,21 @@
                         <svg class="btn-icon-svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
                     </span>
                     <span class="cta-note">Местата ще са ограничени до 16 отбора · Безплатен вход</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Attend -->
+    <section id="attend" class="section section-attend">
+        <div class="container">
+            <div class="cta-card reveal-up">
+                <div class="cta-bg-effect"></div>
+                <div class="cta-content">
+                    <img src="CatIcon.png" alt="Atanasoff48" class="cta-mascot">
+                    <h2>Отборите са <span class="text-gradient">сформирани</span>!</h2>
+                    <p>Всички отбори за Atanasoff48 вече са сформирани. Каним всички да заповядат на 2–4 октомври в STEM центъра <strong>като гости или като участници</strong> — стига да са регистрирани като такива.</p>
+                    <p class="cta-thanks">Благодарим на всички наши спонсори и партньори, които направиха Atanasoff48 възможен!</p>
                 </div>
             </div>
         </div>
@@ -463,8 +503,8 @@
                     <a href="#about">За нас</a>
                     <a href="#awards">Награди</a>
                     <a href="#schedule">Програма</a>
-                    <a href="#rules">Участие</a>
-                    <a href="#register">Регистрация</a>
+                    <a href="#attend">Участие</a>
+                    <!-- <a href="#register">Регистрация</a> -->
                 </div>
             </div>
             <div class="footer-bottom">
