@@ -2024,6 +2024,15 @@ img {
         height: calc(var(--h) * 0.75);
     }
 
+    /* Mobile partner order: QOAX takes 2nd place, Аз мога moves to 3rd */
+    .supporter-chip--ux2dev {
+        order: -2;
+    }
+
+    .supporter-chip--qoax {
+        order: -1;
+    }
+
     .countdown-block {
         min-width: 62px;
         padding: 10px 10px 8px;
